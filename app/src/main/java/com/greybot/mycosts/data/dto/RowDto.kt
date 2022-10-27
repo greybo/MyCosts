@@ -9,9 +9,9 @@ data class RowDto(
     var objectId: String? = null,
     var parentId: String? = null,
     val path: String = "",
-    val title: String = "",
+    val nameRow: String = "",
     val measure: String = "",
-    val count: Int = 1,
+    val count: Float = 1f,
     val price: Float = 0F,
     val bought: Boolean = false,
     val currency: CurrencyDto? = CurrencyDto(),
@@ -24,7 +24,7 @@ data class RowDto(
             "objectId" to objectId,
             "parentId" to parentId,
             "path" to path,
-            "title" to title,
+            "title" to nameRow,
             "measure" to measure,
             "count" to count,
             "price" to price,
@@ -43,7 +43,7 @@ data class RowDto(
         if (objectId != other.objectId) return false
         if (parentId != other.parentId) return false
         if (path != other.path) return false
-        if (title != other.title) return false
+        if (nameRow != other.nameRow) return false
         if (measure != other.measure) return false
         if (count != other.count) return false
         if (price != other.price) return false
@@ -58,9 +58,9 @@ data class RowDto(
         var result = objectId?.hashCode() ?: 0
         result = 31 * result + (parentId?.hashCode() ?: 0)
         result = 31 * result + path.hashCode()
-        result = 31 * result + title.hashCode()
+        result = 31 * result + nameRow.hashCode()
         result = 31 * result + measure.hashCode()
-        result = 31 * result + count
+        result = 31 * result + count.hashCode()
         result = 31 * result + price.hashCode()
         result = 31 * result + bought.hashCode()
         result = 31 * result + (currency?.hashCode() ?: 0)

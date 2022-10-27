@@ -21,7 +21,7 @@ class RowAddFragment : BaseBindingFragment<RowAddFragmentBinding>(RowAddFragment
     private fun initViews() {
         args?.path ?: throw Throwable()
         with(binding) {
-            addRowPrice.setOnEditorActionListener { view, actionId, event ->
+            addRowPrice.setOnEditorActionListener { _, actionId, _ ->
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
                     saveAndExit()
                     true
@@ -42,9 +42,9 @@ class RowAddFragment : BaseBindingFragment<RowAddFragmentBinding>(RowAddFragment
                 0f
             }
             val count = try {
-                addRowCount.text.toString().toInt()
+                addRowCount.text.toString().toFloat()
             } catch (e: NumberFormatException) {
-                1
+                1f
             }
             if (name.isNotBlank()) {
                 viewModel.addRow(

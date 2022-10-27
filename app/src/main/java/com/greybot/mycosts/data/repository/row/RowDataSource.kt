@@ -20,14 +20,14 @@ class RowDataSource {
     fun addRow(
         path: String,
         rowName: String,
-        count: Int = 0,
+        count: Float = 0F,
         price: Float = 0F,
         currency: CurrencyDto? = null,
         parentId: String?
     ) {
         val row = RowDto(
             path = path,
-            title = rowName,
+            nameRow = rowName,
             count = count,
             price = price,
             currency = currency,

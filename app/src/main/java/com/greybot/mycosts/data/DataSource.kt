@@ -1,6 +1,5 @@
 package com.greybot.mycosts.data
 
-import android.util.Log
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -50,17 +49,13 @@ class DataSource {
 //    }
 
 
-
-
-
-
     private fun writeNewPost(userId: String, username: String, title: String, body: String) {
         // Create new post at /user-posts/$userid/$postid and at
         // /posts/$postid simultaneously
         val database: DatabaseReference = Firebase.database.reference
         val key = database.child("posts").push().key
         if (key == null) {
-            Log.w("TAG", "Couldn't get push key for posts")
+            LogApp.w("TAG", null, "Couldn't get push key for posts")
             return
         }
 

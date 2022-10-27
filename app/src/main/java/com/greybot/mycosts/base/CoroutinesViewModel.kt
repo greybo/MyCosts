@@ -7,6 +7,8 @@ import okhttp3.ResponseBody
 import retrofit2.HttpException
 import retrofit2.Response
 
+@ObsoleteCoroutinesApi
+@DelicateCoroutinesApi
 class CoroutinesViewModel : CompositeViewModel() {
 
     private val tag = "coroutine_test"

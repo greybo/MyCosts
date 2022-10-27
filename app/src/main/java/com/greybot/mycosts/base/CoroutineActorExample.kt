@@ -3,12 +3,14 @@ package com.greybot.mycosts.base
 import com.greybot.mycosts.base.CounterCommand.*
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.ObsoleteCoroutinesApi
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.actor
 import kotlinx.coroutines.delay
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
 
+@ObsoleteCoroutinesApi
 class CoroutineActorExample(coroutineContext: CoroutineContext = EmptyCoroutineContext) {
 
     private val scope = CoroutineScope(coroutineContext)

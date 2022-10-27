@@ -12,6 +12,7 @@ import android.view.View
 import android.widget.TextView
 import au.com.crownresorts.crma.utility.getSafeColor
 import com.greybot.mycosts.R
+import java.util.*
 import java.util.regex.Pattern
 
 
@@ -22,7 +23,7 @@ fun String.capitalizingFirstLetter(): String {
 fun String.capitalizeWords(): String {
     var result = ""
     for (word in this.split(" ")) {
-        result = result.plus(word.lowercase().capitalize()).plus(" ")
+        result = result.plus(word.lowercase().capitalize(Locale.getDefault())).plus(" ")
     }
 
     return result
@@ -55,7 +56,7 @@ fun String.makeHTML(): Spanned {
 }
 
 fun String?.notNull(): String {
-    return this?.let { it } ?: ""
+    return this ?: ""
 }
 
 fun String?.isMatches(pattern: Pattern): Boolean {
