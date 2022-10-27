@@ -4,6 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/addRowButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/addRowNameLayout"
         style="@style/InputLayoutDefault"
@@ -12,21 +25,20 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:hint="Row name"
+        android:hint="@string/row_name"
         android:imeOptions="actionDone"
         android:inputType="textVisiblePassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.6">
+        app:layout_constraintTop_toBottomOf="@+id/addRowButton">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/addRowName"
             style="@style/TextInputEditTextDefault"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:imeOptions="actionDone"
+            android:imeOptions="actionNext"
             android:inputType="textVisiblePassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -37,23 +49,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Count name"
+        android:hint="@string/count"
         android:imeOptions="actionDone"
         android:inputType="textVisiblePassword"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addRowNameLayout"
-        app:layout_constraintWidth_percent="0.6">
+        app:layout_constraintWidth_percent="0.3">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/addRowCount"
             style="@style/TextInputEditTextDefault"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:imeOptions="actionDone"
-            android:inputType="textVisiblePassword" />
+            android:imeOptions="actionNext"
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -62,16 +72,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Price name"
+        android:hint="@string/price"
         android:imeOptions="actionDone"
         android:inputType="textVisiblePassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addRowCountLayout"
-        app:layout_constraintWidth_percent="0.6">
+        app:layout_constraintBottom_toBottomOf="@+id/addRowCountLayout"
+        app:layout_constraintEnd_toEndOf="@+id/addRowNameLayout"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@+id/addRowCountLayout"
+        app:layout_constraintWidth_percent="0.4">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/addRowPrice"
@@ -79,18 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:imeOptions="actionDone"
-            android:inputType="textVisiblePassword" />
+            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/addRowButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:text="save"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addRowPriceLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

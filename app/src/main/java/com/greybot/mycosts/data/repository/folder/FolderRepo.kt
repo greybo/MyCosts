@@ -1,6 +1,5 @@
 package com.greybot.mycosts.data.repository.folder
 
-import android.util.Log
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -79,7 +78,7 @@ class FolderRepo {
         val database: DatabaseReference = Firebase.database.reference
 
         if (item.objectId == null) {
-            Log.w("TAG", "Couldn't get push key for posts")
+            LogApp.w("TAG", null, "Couldn't get push key for posts")
             return
         }
 

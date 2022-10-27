@@ -10,9 +10,9 @@ class RowAddViewModel : CompositeViewModel() {
 
     private val source: RowDataSource get() = AppCoordinator.shared.rowDataSource
 
-    fun addRow(path: String, rowName: String, count: String = "1", price: Float = 0F, currency: CurrencyDto? = null, parentId: String?) {
+    fun addRow(path: String, rowName: String, count: Int = 1, price: Float = 0F, currency: CurrencyDto? = null, parentId: String?) {
         var _count = try {
-            count.toInt()
+            count
         } catch (e: Exception) {
             LogApp.w("addRow_tag", e)
             1

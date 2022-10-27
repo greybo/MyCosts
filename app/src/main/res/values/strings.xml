@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MyCosts</string>
+    <string name="save">save</string>
+    <string name="row_name">Row name</string>
+    <string name="count">Count</string>
+    <string name="price">Price</string>
 </resources>
